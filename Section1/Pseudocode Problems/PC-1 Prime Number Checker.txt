@@ -1,0 +1,55 @@
+# PC-1: Prime Number Checker
+
+**Algorithm: Prime Number Checker**
+
+BEGIN
+
+    INPUT N
+
+    IF N <= 1 THEN
+        OUTPUT "Invalid Input"
+        STOP
+    END IF
+
+    i ← 2
+
+    WHILE i × i <= N DO
+
+        IF N MOD i = 0 THEN
+            OUTPUT "Not Prime"
+            STOP
+        END IF
+
+        i ← i + 1
+
+    END WHILE
+
+    OUTPUT "Prime"
+
+END
+
+
+### Example 1
+
+```text
+Input: N = 61
+
+61 is not divisible by 2, 3, 4, 5, 6, or 7.
+Since 7 × 7 <= 61 and the next value is 8,
+the loop ends.
+
+Output: Prime
+```
+
+### Example 2
+
+```text
+Input: N = 8
+
+8 MOD 2 = 0
+
+Output: Not Prime
+```
+
+**Optimization:**
+The loop checks factors only while `i × i <= N`, which is equivalent to checking factors up to `√N`. This is more efficient than checking all numbers up to `N`.

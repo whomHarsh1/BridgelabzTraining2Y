@@ -1,0 +1,72 @@
+# PC-2: Number Digit Reversal
+
+**Algorithm: Number Digit Reversal**
+
+
+BEGIN
+
+    INPUT N
+
+    reversed ← 0
+
+    WHILE N > 0 DO
+
+        digit ← N MOD 10
+
+        reversed ← reversed × 10 + digit
+
+        N ← N DIV 10
+
+    END WHILE
+
+    OUTPUT reversed
+
+END
+```
+
+### Example 1
+
+
+Input: N = 1234
+
+digit = 1234 MOD 10 = 4
+reversed = 0 × 10 + 4 = 4
+N = 1234 DIV 10 = 123
+
+digit = 123 MOD 10 = 3
+reversed = 4 × 10 + 3 = 43
+N = 123 DIV 10 = 12
+
+digit = 12 MOD 10 = 2
+reversed = 43 × 10 + 2 = 432
+N = 12 DIV 10 = 1
+
+digit = 1 MOD 10 = 1
+reversed = 432 × 10 + 1 = 4321
+N = 1 DIV 10 = 0
+
+Output: 4321
+```
+
+### Example 2
+
+
+Input: N = 806
+
+digit = 6
+reversed = 6
+
+digit = 0
+reversed = 60
+
+digit = 8
+reversed = 608
+
+Output: 608
+```
+
+**Key operations:**
+
+* `N MOD 10` → extracts the last digit.
+* `reversed × 10 + digit` → adds the extracted digit to the reversed number.
+* `N DIV 10` → removes the last digit from `N`.
